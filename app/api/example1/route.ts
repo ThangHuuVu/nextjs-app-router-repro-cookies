@@ -1,8 +1,8 @@
 const handler = async (_: Request) => {
 
-  return new Response('the cookie example1 has HttpOnly', {
+  return new Response('the cookie secured_1 has HttpOnly', {
     status: 200,
-    headers: { 'Set-Cookie': `example1=1; Path=/; Secure; HttpOnly` },
+    headers: { 'Set-Cookie': `secured_1=true; Path=/; Secure; HttpOnly` },
   });
 };
 

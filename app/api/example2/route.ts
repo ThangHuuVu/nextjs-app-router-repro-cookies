@@ -1,11 +1,11 @@
 import { cookies } from "next/headers";
 
 const handler = async (_: Request) => {
-  cookies().set({ name: "example2_custom", value: "2", secure: true, httpOnly: true });
+  cookies().set({ name: "custom_cookie", value: "1" });
 
-  return new Response(`the foo cookie won't have HttpOnly after using cookies().set() for the bar cookie on line 4`, {
+  return new Response(`the cookie secure_2 won't have HttpOnly nor Secure after using cookies().set() for custom_cookie on line 4`, {
     status: 200,
-    headers: { 'Set-Cookie': `example2=2; Secure; HttpOnly` },
+    headers: { 'Set-Cookie': `secure_2=true; Secure; HttpOnly` },
   });
 };
 
